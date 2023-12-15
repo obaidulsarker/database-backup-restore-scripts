@@ -31,7 +31,7 @@ BACKUP_BASE_LOCATION=/backup/$DB_NAME
 # You don't need to change below variables
 BACKUP_LOCATION=$BACKUP_BASE_LOCATION/dump
 LOG_LOCATION=$BACKUP_LOCATION
-LOGFILE=$BACKUP_LOCATION/dump-backup-db-log.log
+LOGFILE=$LOG_LOCATION/dump-backup-table-log.log
 BACKUP_FILENAME=$BACKUP_LOCATION/$DB_NAME-$DB_TABLE_NAME-$(date +%F_%H-%M-%S).dump
 
 # Create directory if not exists
