@@ -14,7 +14,7 @@ $DB_NAME = "sample_db"
 $BACKUP_USER = "postgres"
 
 # Database user password
-$BACKUP_PASS = "biTS@#123"
+$BACKUP_PASS = "xxxxxxx"
 
 # Where you want to store backup files
 $BACKUP_BASE_LOCATION = "D:\backup\$DB_NAME"
