@@ -9,10 +9,10 @@ HOST=localhost
 # Port of the database server
 PORT=5432
 
-# Database name which want to take backup
+# Database name which want to restore
 DB_NAME=sample_db
 
-# Database user which will use to take the backup
+# Database user which will use to restore the backup
 DB_USER=postgres
 
 # database user password
