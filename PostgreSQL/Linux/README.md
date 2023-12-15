@@ -1,7 +1,7 @@
 # How to take DUMP backup from PostgreSQL and restore to another server in Linux environment?
 
-## Prerequisite:
-### You must install PostgreSQL client (pg_dump & pg_restore) in the host machine where you run the BACKUP and RESTORE process. If you want to take backup from PostgreSQL server, you don't need to install PostgreSQL client.
+## Prerequisites:
+### You must install PostgreSQL client (pg_dump & pg_restore) in the host machine where you will run the BACKUP and RESTORE process. If you want to take backup from PostgreSQL server, you don't need to install PostgreSQL client.
 
 ## Backup process:
 ### You can take backup by using following scripts:
