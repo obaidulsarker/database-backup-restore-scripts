@@ -6,6 +6,6 @@ You can take backup by using following scripts:
 ### dump_backup_table.sh: It will be used for table backup of a schema in a database.
 
 ## Restore process:
-Whatever you take the backup, your restoration is remain same for database, schema and table. 
+You must CREATE a empty database before restoration of the database. You can use following script to restore the database / schema/ table. 
 ### restore_backup_database.sh : It will be used for dump backup restroation into PostgreSQL database.
 
