@@ -12,6 +12,9 @@ PORT=5432
 # Database name which want to take backup
 DB_NAME=sample_db
 
+# Provide Schema Name
+DB_SCHEMA_NAME=public
+
 # Database user which will use to take the backup
 BACKUP_USER=enterprisedb
 
@@ -20,6 +23,7 @@ BACKUP_PASS='xxxxxxxxx'
 
 # Where you want to store backup files
 BACKUP_BASE_LOCATION=/backup/$DB_NAME
+
 
 # You don't need to change below variables
 BACKUP_LOCATION=$BACKUP_BASE_LOCATION/dump
@@ -33,7 +37,7 @@ mkdir -p $BACKUP_LOCATION
 # Perform Backup
 echo "$(date) : DB[$DB_NAME] backup STARTED" >> $LOGFILE;
 
-PGPASSWORD=$BACKUP_PASS $PGDUMP --username $BACKUP_USER  --host $HOST --port $PORT -Fc --lock-wait-timeout=600 --no-sync -f $BACKUP_FILENAME $DB_NAME 2>> $LOGFILE;
+PGPASSWORD=$BACKUP_PASS $PGDUMP --username $BACKUP_USER  --host $HOST --port $PORT -Fc --lock-wait-timeout=600 --no-sync --schema $DB_SCHEMA_NAME -f $BACKUP_FILENAME $DB_NAME 2>> $LOGFILE;
 
 
 echo "$(date) : DB[$DB_NAME] backup FINISHED" >> $LOGFILE;
