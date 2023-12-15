@@ -3,9 +3,9 @@
 # Database Folder:
 -- Each database folder contain two sub-folders - (a) Linux and (b) Windows
 
-## Linux Sub-Folder:
+### Linux Sub-Folder:
 -- Contain database backup and restoration shell scripts.
 
-# Windows Sub-Folder:
+### Windows Sub-Folder:
 -- Contain database backup and restoration Powershell scripts.
 
