@@ -20,7 +20,7 @@ $TABLE_NAME = "$SCHEMA_NAME.table2"
 $BACKUP_USER = "postgres"
 
 # Database user password
-$BACKUP_PASS = "biTS@#123"
+$BACKUP_PASS = "xxxxxx"
 
 # Where you want to store backup files
 $BACKUP_BASE_LOCATION = "D:\backup\$DB_NAME"
@@ -45,7 +45,6 @@ $env:PGPASSWORD = $BACKUP_PASS
 Add-Content -Path $LOGFILE -Value "$((Get-Date) -f 'yyyy-MM-dd HH:mm:ss'): DB[$TABLE_NAME] backup is FINISHED"
 }
 catch {
-	# Add-Content -Path $LOGFILE -Value "$((Get-Date) -f 'yyyy-MM-dd HH:mm:ss'): Error: $($_.Exception.Message)"
 	Add-Content -Path $LOGFILE -Value "$((Get-Date) -f 'yyyy-MM-dd HH:mm:ss'): ERROR - $($_.Exception.Message)"
 }
 

@@ -17,7 +17,7 @@ $SCHEMA_NAME = "public"
 $BACKUP_USER = "postgres"
 
 # Database user password
-$BACKUP_PASS = "biTS@#123"
+$BACKUP_PASS = "xxxxxx"
 
 # Where you want to store backup files
 $BACKUP_BASE_LOCATION = "D:\backup\$DB_NAME"
