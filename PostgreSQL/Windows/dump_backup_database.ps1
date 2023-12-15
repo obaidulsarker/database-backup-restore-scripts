@@ -1,8 +1,8 @@
 # Where pg_dump binary is located
-$PGDUMP = "C:\Program Files\PostgreSQL\14\bin\pg_dump.exe"
+$PGDUMP = "D:\Program Files\PostgreSQL\14\bin\pg_dump.exe"
 
 # Host Name or IP address of the database server
-$HOST = "localhost"
+$HOST_NAME = "localhost"
 
 # Port of the database server
 $PORT = 5432
@@ -14,10 +14,10 @@ $DB_NAME = "sample_db"
 $BACKUP_USER = "postgres"
 
 # Database user password
-$BACKUP_PASS = 'xxxxxxxxx'
+$BACKUP_PASS = "biTS@#123"
 
 # Where you want to store backup files
-$BACKUP_BASE_LOCATION = "C:\backup\$DB_NAME"
+$BACKUP_BASE_LOCATION = "D:\backup\$DB_NAME"
 
 # You don't need to change below variables
 $BACKUP_LOCATION = Join-Path $BACKUP_BASE_LOCATION "dump"
@@ -32,6 +32,6 @@ New-Item -ItemType Directory -Force -Path $BACKUP_LOCATION
 Add-Content -Path $LOGFILE -Value "$((Get-Date) -f 'yyyy-MM-dd HH:mm:ss'): DB[$DB_NAME] backup STARTED"
 
 $env:PGPASSWORD = $BACKUP_PASS
-& $PGDUMP --username $BACKUP_USER --host $HOST --port $PORT -Fc --lock-wait-timeout=600 --no-sync -f $BACKUP_FILENAME $DB_NAME 2>> $LOGFILE
+& $PGDUMP --username $BACKUP_USER --host $HOST_NAME --port $PORT -Fc --lock-wait-timeout=600 --no-sync -f $BACKUP_FILENAME $DB_NAME
 
 Add-Content -Path $LOGFILE -Value "$((Get-Date) -f 'yyyy-MM-dd HH:mm:ss'): DB[$DB_NAME] backup FINISHED"
