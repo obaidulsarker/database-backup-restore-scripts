@@ -13,7 +13,7 @@ PORT=5432
 DB_NAME=sample_db
 
 # Database user which will use to take the backup
-BACKUP_USER=enterprisedb
+BACKUP_USER=postgres
 
 # database user password
 BACKUP_PASS='xxxxxxxxx'
