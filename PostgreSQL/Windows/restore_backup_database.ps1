@@ -31,6 +31,7 @@ $DUMP_FILE = Join-Path $BACKUP_LOCATION "sample_db-2023-12-15_17-08-59.dump"
 # Create directory if not exists
 New-Item -ItemType Directory -Force -Path $BACKUP_LOCATION
 
+try {
 # Perform Backup
 Add-Content -Path $LOGFILE -Value "$((Get-Date) -f 'yyyy-MM-dd HH:mm:ss'): DB[$DB_NAME] restoration is STARTED"
 
@@ -38,3 +39,14 @@ $env:PGPASSWORD = $DB_USER_PASS
 & $PG_RESTORE --host $HOST_NAME --port $PORT  -U $DB_USER -c -v -d $DB_NAME $DUMP_FILE
 
 Add-Content -Path $LOGFILE -Value "$((Get-Date) -f 'yyyy-MM-dd HH:mm:ss'): DB[$DB_NAME] restoration is FINISHED"
+
+}
+
+catch {
+	Add-Content -Path $LOGFILE -Value "$((Get-Date) -f 'yyyy-MM-dd HH:mm:ss'): ERROR - $($_.Exception.Message)"
+}
+
+finally {
+    # Clear the password from the environment variable
+    Remove-Item Env:\PGPASSWORD
+}
